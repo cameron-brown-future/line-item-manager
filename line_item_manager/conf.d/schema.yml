@@ -87,6 +87,8 @@ properties:
           type: "number"
     required:
       - "name"
+  sizes:
+    $ref: "#/definitions/sizeArray"
   line_item:
     type: "object"
     additionalProperties: False

@@ -22,9 +22,16 @@ costPerUnit:
 costType: "{{ user_cfg.rate.cost_type }}"
 
 creativePlaceholders:
+  {% if user_cfg.sizes %}
+  {% for size in user_cfg.sizes %}
+  - size: {{ size }}
+  {% endfor %}
+  {% else %}
   {% for size in user_cfg.creative[li.media_type].sizes %}
   - size: {{ size }}
   {% endfor %}
+  {% endif %}
+
 
 {% if li.media_type == 'video' %}
 environmentType: "VIDEO_PLAYER"
